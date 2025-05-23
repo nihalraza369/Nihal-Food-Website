@@ -1,0 +1,147 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* White */
+    --foreground: 20 14.3% 4.1%; /* Dark Gray */
+    
+    --card: 0 0% 98%; /* Light Gray for cards */
+    --card-foreground: 20 14.3% 4.1%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    
+    --primary: 35 92% 55%; /* Vibrant Orange */
+    --primary-foreground: 0 0% 100%; /* White */
+    
+    --secondary: 45 93% 47%; /* Bright Yellow */
+    --secondary-foreground: 20 14.3% 4.1%;
+    
+    --muted: 0 0% 90%; /* Lighter Gray for muted elements */
+    --muted-foreground: 0 0% 45%; /* Medium Gray for muted text */
+    
+    --accent: 10 80% 55%; /* Warm Red */
+    --accent-foreground: 0 0% 100%;
+    
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 85%; /* Light Gray border */
+    --input: 0 0% 93%; /* Very Light Gray input background */
+    --ring: 35 92% 60%; /* Slightly Lighter Orange for rings */
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* For future dark mode, if requested */
+    --background: 20 14.3% 4.1%;
+    --foreground: 0 0% 95%;
+    
+    --card: 24 9.8% 10%;
+    --card-foreground: 0 0% 95%;
+    
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 0 0% 95%;
+    
+    --primary: 35 92% 58%;
+    --primary-foreground: 20 14.3% 4.1%;
+    
+    --secondary: 45 93% 50%;
+    --secondary-foreground: 20 14.3% 4.1%;
+    
+    --muted: 24 9.8% 15%;
+    --muted-foreground: 0 0% 65%;
+    
+    --accent: 10 80% 60%;
+    --accent-foreground: 0 0% 95%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    
+    --border: 24 9.8% 18%;
+    --input: 24 9.8% 12%;
+    --ring: 35 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-bold tracking-tight;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.gradient-text-food {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent to-secondary;
+}
+
+.gradient-bg-food {
+  @apply bg-gradient-to-br from-primary via-orange-500 to-accent hover:from-orange-500 hover:via-accent hover:to-red-600;
+}
+
+.glass-card-food {
+  @apply bg-card/80 backdrop-blur-md border border-black/5 rounded-xl shadow-lg;
+}
+
+.nav-link-food {
+  @apply relative px-3 py-2 text-foreground/80 hover:text-primary transition-colors duration-300 font-semibold;
+}
+
+.nav-link-food::after {
+  content: '';
+  @apply absolute left-1/2 -translate-x-1/2 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
+}
+
+.nav-link-food:hover::after, .nav-link-food.active::after {
+  @apply w-3/4;
+}
+
+.section-padding-food {
+  @apply py-16 md:py-24;
+}
+
+.container-food {
+  @apply max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.food-item-card {
+  @apply bg-card rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-1.5 border border-transparent hover:border-primary/50;
+}
+
+.food-category-card {
+  @apply bg-gradient-to-br from-gray-50 via-white to-gray-100 rounded-2xl shadow-lg p-6 text-center transition-all duration-300 hover:shadow-xl hover:scale-105 border border-transparent hover:border-primary/30;
+}
+
+.search-input-food {
+  @apply w-full bg-input text-foreground placeholder-muted-foreground px-4 py-3 rounded-lg border-2 border-border focus:border-primary focus:ring-primary focus:bg-white transition-colors duration-300;
+}
+
+.button-food-primary {
+  @apply gradient-bg-food text-primary-foreground font-semibold shadow-md hover:shadow-lg transition-all duration-300;
+}
+
+.button-food-secondary {
+  @apply bg-secondary text-secondary-foreground font-semibold shadow-md hover:bg-yellow-500 hover:shadow-lg transition-all duration-300;
+}
+
+.button-food-outline {
+  @apply border-2 border-primary text-primary bg-transparent hover:bg-primary/10 font-semibold shadow-sm hover:shadow-md transition-all duration-300;
+}
+
+.tag-food {
+  @apply text-xs font-semibold px-3 py-1 rounded-full bg-secondary/20 text-secondary-foreground;
+}

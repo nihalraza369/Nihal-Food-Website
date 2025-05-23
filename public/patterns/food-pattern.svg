@@ -1,0 +1,11 @@
+
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="foodPattern" patternUnits="userSpaceOnUse" width="50" height="50" patternTransform="scale(1) rotate(0)">
+      <path d="M10 10 C 15 0, 25 0, 30 10 S 40 20, 30 30 S 10 40, 10 30 S 0 20, 10 10" fill="hsl(35 92% 55% / 0.05)"/>
+      <circle cx="40" cy="40" r="3" fill="hsl(10 80% 55% / 0.05)"/>
+      <path d="M5 45 Q 25 50, 45 45 T 5 45" stroke="hsl(45 93% 47% / 0.05)" stroke-width="1" fill="none"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#foodPattern)" />
+</svg>
